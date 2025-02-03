@@ -5,14 +5,16 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
     <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <title>Portafolio</title>
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="../CSS/style.css">
+
 </head>
 <body>
     <!-- Menú Encabezado -->
-    <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+    <nav class="navbar navbar-expand-lg navbar-dark fixed-top">
         <div class="container">
             <a class="navbar-brand" href="#">Bompton</a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
@@ -24,7 +26,7 @@
                     <li class="nav-item"><a class="nav-link" href="#sobremi">Sobre Mí</a></li>
                     <li class="nav-item"><a class="nav-link" href="#skills">Skills</a></li>
                     <li class="nav-item"><a class="nav-link" href="#portfolio">Portafolio</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#contacto">Contacto</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#Contacto">Contacto</a></li>
                 </ul>
             </div>
         </div>
@@ -38,6 +40,17 @@
             </div>
             <h1 class="display-4">Esteban Villalobos</h1>
             <p class="lead">Tatuador</p>
+            <div class="d-flex justify-content-center gap-3 mt-4">
+                <a href="https://api.whatsapp.com/send/?phone=%2B50687309407&text&type=phone_number&app_absent=0" class="text-white fs-3" target="_blank">
+                    <i class="fa-brands fa-whatsapp"></i>
+                </a>
+                <a href="https://www.instagram.com" class="text-white fs-3" target="_blank">
+                    <i class="fa-brands fa-instagram"></i>
+                </a>
+                <a href="https://www.tiktok.com/@estebanv.tattoo?_t=zm-8sk9fpknw5d&_r=1" class="text-white fs-3" target="_blank">
+                    <i class="fa-brands fa-tiktok"></i>
+                </a>
+            </div>
         </div>
     </section>
 
@@ -47,8 +60,7 @@
             <h2 class="text-center mb-5">Sobre Mí</h2>
             <p class="text-center mb-4"><span class="fw-bold text-success">Hola, soy Esteban Villalobos.</span> Un apasionado del arte y la expresión a través de la piel. 
                 Desde hace más de 10 años, he convertido ideas, emociones y sueños en tatuajes que cuentan historias únicas.
-                Mi misión como tatuador es fusionar creatividad y técnica para dar vida a obras que trasciendan el tiempo.
-                Cada línea, cada sombra y cada detalle que aplico lleva mi compromiso de crear algo especial para cada persona que confía en mi arte.</p>
+                Mi misión como tatuador es fusionar creatividad y técnica para dar vida a obras que trasciendan en el tiempo.</p>
             <div class="row">
                 <!-- Datos Personales -->
                 <div class="col-md-6">
@@ -90,7 +102,7 @@
             <h2 class="text-center mb-5">Skills</h2>
             <div class="row">
                 <div class="col-md-6">
-                    <h3>Technical Skills</h3>
+                    <h3>Habilidades Técnicas</h3>
                     <ul>
                         <li>Dibujo y Diseño Artístico</li>
                         <li>Conocimiento de técnicas de tatuaje</li>
@@ -108,7 +120,7 @@
         </div>
     </section>
 
-   <!-- Sección Portafolio -->
+<!-- Sección Portafolio -->
     <section id="portfolio" class="portafolio">
         <div class="contenido-seccion">
             <h2>Tattoos</h2>
@@ -179,7 +191,95 @@
                 </div>
             </div>
         </div>
-    </section>
-</body>
+    </section
 
+    <!-- Sección Contacto -->
+    <seccion id="Contacto" class="Contacto">
+        <div class="contenido-seccion">
+            <h2>Contacto</h2>
+            <div class="fila">
+                <!-- Formulario -->
+                <div class="col">
+                    <input type="text" id="nombre" placeholder="Nombre Completo">
+                    <input type="text" id="telefono" placeholder="Número Telefónico">
+                    <input type="text" id="email" placeholder="Email">
+                    <!-- Menú de selección de categoría -->
+                    <div class="menu-categoria">
+                        <label for="categoria">Selecciona una categoría:</label>
+                        <select id="categoria" name="categoria">
+                            <option value="" disabled selected>Seleccione una opción</option>
+                            <option value="Cotización">Cotización</option>
+                            <option value="Agenda">Agenda</option>
+                            <option value="Métodos de Pago">Métodos de Pago</option>
+                            <option value="Otro">Otro</option>
+                        </select>
+                    </div>
+                    <textarea id="mensaje" cols="30" rows="10" placeholder="Mensaje"></textarea> 
+                    <button onclick="enviarWhatsApp()">
+                        Enviar Mensaje <i class="fa-solid fa-paper-plane"></i>
+                        <span class="overlay"></span>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </seccion>
+
+    <script>
+        function enviarWhatsApp() {
+            var nombre = document.getElementById("nombre").value;
+            var telefono = document.getElementById("telefono").value;
+            var email = document.getElementById("email").value;
+            var categoria = document.getElementById("categoria").value;
+            var mensaje = document.getElementById("mensaje").value;
+
+            var texto = `*Nombre:* ${nombre}\n*Teléfono:* ${telefono}\n*Email:* ${email}\n*Categoría:* ${categoria}\n*Mensaje:* ${mensaje}`;
+            
+            var url = `https://api.whatsapp.com/send/?phone=%2B50687309407&text=${encodeURIComponent(texto)}&type=phone_number&app_absent=0`;
+
+            // Redirigir al usuario a WhatsApp con el mensaje
+            window.open(url, "_blank");
+        }
+    </script>
+
+    <!-- Footer -->
+    <footer class="bg-dark text-white py-4">
+    <!-- Botón para volver arriba -->
+    <div class="text-center">
+        <a href="#inicio" class="text-white text-decoration-none">
+            <i class="fa-solid fa-angles-up fs-3"></i>
+        </a>
+    </div>
+
+    <!-- Redes sociales -->
+    <div class="redes">
+        <div class="d-flex justify-content-center gap-3 mt-4">          
+            <a href="https://api.whatsapp.com/send/?phone=%2B50687309407&text&type=phone_number&app_absent=0" class="text-white fs-3" target="_blank">
+                <i class="fa-brands fa-whatsapp"></i>
+            </a>
+            <a href="https://www.instagram.com" class="text-white fs-3" target="_blank">
+                <i class="fa-brands fa-instagram"></i>
+            </a>
+            <a href="https://www.tiktok.com/@estebanv.tattoo?_t=zm-8sk9fpknw5d&_r=1" class="text-white fs-3" target="_blank">
+                <i class="fa-brands fa-tiktok"></i>
+            </a>
+        </div>
+    </div>
+    </footer>
+
+    <!-- Cerrar Menú -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const navLinks = document.querySelectorAll('.nav-link');
+
+            navLinks.forEach(link => {
+                link.addEventListener('click', function() {
+                    const navbarCollapse = document.getElementById('navbarNav');
+                    if (navbarCollapse.classList.contains('show')) {
+                        navbarCollapse.classList.remove('show');
+                    }
+                });
+            });
+        });
+    </script>
+</body>
 </html>
