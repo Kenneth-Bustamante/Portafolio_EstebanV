@@ -16,7 +16,8 @@ html {
 }
 
 .navbar-brand img {
-    height: 110px !important;
+    height: auto;
+    max-height: 110px; 
     width: auto;
 }
 
