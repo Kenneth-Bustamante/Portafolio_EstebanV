@@ -15,15 +15,16 @@ html {
     background-color: rgba(30, 35, 38, 0.8);
 }
 
-.navbar-brand {
-    font-family: 'Righteous', sans-serif;
-    font-size: 36px;
-    color: #1CB698;
+.navbar-brand img {
+    height: auto;
+    max-height: 110px; 
+    width: auto;
 }
 
 .navbar-nav {
     margin: 0 auto;
     text-align: center;
+    font-size: 1.3rem;
 }
 
 .nav-link {
